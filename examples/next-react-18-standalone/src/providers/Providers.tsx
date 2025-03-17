@@ -19,7 +19,7 @@ export const ContextProviders = ({ children }: { children: ReactNode }) => {
         port: 443,
         protocol: "https",
       }}
-      appInfo={{ name: "Next 19 standalone" }}
+      appInfo={{ name: "Next 18 standalone" }}
       muUrl="https://mu.ao-testnet.xyz"
     >
       {children}
