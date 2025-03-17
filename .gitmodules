@@ -5,3 +5,7 @@
 [submodule "packages/ao-sync-sdk"]
 	path = packages/ao-sync-sdk
 	url = https://github.com/vela-ventures/ao-sync-sdk.git
+[submodule "packages/aosync-strategy"]
+	path = packages/aosync-strategy
+	url = https://github.com/vela-ventures/aosync-strategy.git
+	branch = monorepo-integration
