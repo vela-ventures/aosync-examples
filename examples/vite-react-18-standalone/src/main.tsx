@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")!).render(
         port: 443,
         protocol: "https",
       }}
-      appInfo={{ name: "Vite 19 standalone" }}
+      appInfo={{ name: "Vite 18 standalone" }}
       muUrl="https://mu.ao-testnet.xyz"
     >
       <App />
