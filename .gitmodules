@@ -1,3 +1,7 @@
 [submodule "packages/aosync-sdk-react"]
 	path = packages/aosync-sdk-react
 	url = https://github.com/vela-ventures/aosync-sdk-react.git
+	branch = monorepo-integration
+[submodule "packages/ao-sync-sdk"]
+	path = packages/ao-sync-sdk
+	url = https://github.com/vela-ventures/ao-sync-sdk.git
