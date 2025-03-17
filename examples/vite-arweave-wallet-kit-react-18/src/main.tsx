@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.tsx";
 import { ArweaveWalletKit } from "@arweave-wallet-kit/react";
 import WanderStrategy from "@arweave-wallet-kit/wander-strategy";
-import BeaconWallet from "@vela-ventures/aosync-strategy";
+import AoSyncStrategy from "@vela-ventures/aosync-strategy";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")!).render(
         ensurePermissions: true,
         strategies: [
           new WanderStrategy(),
-          new BeaconWallet(),
+          new AoSyncStrategy()
         ],
       }}
     >
