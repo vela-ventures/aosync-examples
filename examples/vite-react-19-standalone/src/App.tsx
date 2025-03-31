@@ -7,6 +7,10 @@ import { useWallet } from "@vela-ventures/aosync-sdk-react";
 function App() {
   const [count, setCount] = useState(0);
   const { isConnected, connect, disconnect } = useWallet();
+  const handleConnect = async () => {
+    await connect()
+    console.log(await window.arweaveWallet.getActiveAddress())
+  }
 
   return (
     <>
@@ -29,7 +33,7 @@ function App() {
         {isConnected ? (
           <button onClick={disconnect}>Disconnect Beacon</button>
         ) : (
-          <button onClick={connect}>Connect Beacon</button>
+          <button onClick={handleConnect}>Connect Beacon</button>
         )}
       </div>
       <p className="read-the-docs">
