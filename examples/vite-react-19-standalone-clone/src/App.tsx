@@ -8,7 +8,15 @@ import Counter from "./counter";
 
 function App() {
   const [count, setCount] = useState(0);
-  const { isConnected, connect, disconnect, signAOMessage } = useWallet();
+  const {
+    isConnected,
+    connect,
+    disconnect,
+    signAOMessage,
+    getAllAddresses,
+    getWalletNames,
+    userTokens,
+  } = useWallet();
   const handleConnect = async () => {
     await connect();
     console.log(await window.arweaveWallet.getActiveAddress());
@@ -23,6 +31,11 @@ function App() {
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+        <img
+          src="https://arweave.net/j6XByc7Z1bKa3SytVcr-Ifykecvc5EQnXmh-HeXD428"
+          alt="QR Code"
+          style={{ width: "100px" }}
+        ></img>
       </div>
       <h1>Vite + React</h1>
       <div
@@ -66,6 +79,7 @@ function App() {
         >
           send message with createDataItemSigner
         </button>
+
         <button
           onClick={async () => {
             const messageId = await message({
@@ -94,6 +108,16 @@ function App() {
           }
         >
           fake tx (sdk)
+        </button>
+
+        <button
+          onClick={async () => {
+            console.log(await getAllAddresses());
+            console.log(await getWalletNames());
+            console.log(await userTokens());
+          }}
+        >
+          get user info
         </button>
         <div>
           <h3>Counter</h3>

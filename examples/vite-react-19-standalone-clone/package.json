@@ -1,10 +1,10 @@
 {
-  "name": "vite-react-19-standalone",
+  "name": "vite-react-19-standalone-clone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5174",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
