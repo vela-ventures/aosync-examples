@@ -8,10 +8,24 @@ import Counter from "./counter";
 
 function App() {
   const [count, setCount] = useState(0);
-  const { isConnected, connect, disconnect, signAOMessage } = useWallet();
+  const {
+    isConnected,
+    connect,
+    disconnect,
+    signAOMessage,
+    getAddress,
+    getAllAddresses,
+    getWalletNames,
+    userTokens,
+    getContacts,
+    getWallets,
+    isSessionActive,
+  } = useWallet();
+  const [address, setAddress] = useState<string | null>(null);
   const handleConnect = async () => {
     await connect();
     console.log(await window.arweaveWallet.getActiveAddress());
+    setAddress((await getAddress()) || null);
   };
 
   return (
@@ -29,8 +43,17 @@ function App() {
         className="card"
         style={{ display: "flex", flexDirection: "column", gap: "10px" }}
       >
+        <p>Address: {address}</p>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
+        </button>
+        <button
+          onClick={async () => {
+            setAddress((await getAddress()) || null);
+            console.log(await getAddress());
+          }}
+        >
+          Get Address
         </button>
         {isConnected ? (
           <button onClick={disconnect}>Disconnect Beacon</button>
@@ -40,7 +63,7 @@ function App() {
         <button
           onClick={() =>
             signAOMessage({
-              target: "VZrWgY1-QYerRHsnVW-NtDYw3InDI2YHJbZtpdzM1HI",
+              target: "BZrWgY1-QYerRHsnVW-NtDYw3InDI2YHJbZtpdzM1HI",
               tags: [{ name: "Action", value: "Info" }],
               data: "somedata",
             })
@@ -98,6 +121,36 @@ function App() {
         <div>
           <h3>Counter</h3>
           <Counter />
+        </div>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <button onClick={async () => console.log(await getAddress())}>
+          Get Address
+        </button>
+        <h3>All Addresses</h3>
+        <button onClick={async () => console.log(await getAllAddresses())}>
+          Get All Addresses
+        </button>
+        <h3>Wallet Names</h3>
+        <button onClick={async () => console.log(await getWalletNames())}>
+          Get Wallet Names
+        </button>
+        <h3>User Tokens</h3>
+        <button onClick={async () => console.log(await userTokens())}>
+          Get User Tokens
+        </button>
+        <h3>Contacts</h3>
+        <button onClick={async () => console.log(await getContacts())}>
+          Get Contacts
+        </button>
+        <h3>Wallets</h3>
+        <button onClick={async () => console.log(await getWallets())}>
+          Get Wallets
+        </button>
+        <h3>Session Active</h3>
+        <div style={{ color: isSessionActive ? "green" : "red" }}>
+          {isSessionActive ? "Active" : "Inactive"}
         </div>
       </div>
       <p className="read-the-docs">

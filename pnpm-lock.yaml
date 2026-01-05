@@ -309,6 +309,58 @@ importers:
         specifier: ^6.2.0
         version: 6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)
 
+  examples/vite-react-19-standalone-clone:
+    dependencies:
+      '@permaweb/aoconnect':
+        specifier: ^0.0.85
+        version: 0.0.85
+      '@tanstack/react-query':
+        specifier: ^5.80.6
+        version: 5.80.6(react@19.0.0)
+      '@vela-ventures/aosync-sdk-react':
+        specifier: workspace:*
+        version: link:../../packages/aosync-sdk-react
+      react:
+        specifier: ^19.0.0
+        version: 19.0.0
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.21.0
+        version: 9.22.0
+      '@types/react':
+        specifier: ^19.0.10
+        version: 19.0.10
+      '@types/react-dom':
+        specifier: ^19.0.4
+        version: 19.0.4(@types/react@19.0.10)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.4
+        version: 4.3.4(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0))
+      eslint:
+        specifier: ^9.21.0
+        version: 9.22.0(jiti@2.4.2)
+      eslint-plugin-react-hooks:
+        specifier: ^5.1.0
+        version: 5.2.0(eslint@9.22.0(jiti@2.4.2))
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.19
+        version: 0.4.19(eslint@9.22.0(jiti@2.4.2))
+      globals:
+        specifier: ^15.15.0
+        version: 15.15.0
+      typescript:
+        specifier: ~5.7.2
+        version: 5.7.3
+      typescript-eslint:
+        specifier: ^8.24.1
+        version: 8.26.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.7.3)
+      vite:
+        specifier: ^6.2.0
+        version: 6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)
+
   packages/ao-sync-sdk:
     dependencies:
       '@fontsource/sora':
@@ -346,8 +398,8 @@ importers:
   packages/aosync-sdk-react:
     dependencies:
       '@vela-ventures/ao-sync-sdk':
-        specifier: ^1.1.26
-        version: 1.1.27
+        specifier: workspace:*
+        version: link:../ao-sync-sdk
     devDependencies:
       '@babel/cli':
         specifier: ^7.26.4
@@ -389,8 +441,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1
       '@vela-ventures/ao-sync-sdk':
-        specifier: ^1.1.27
-        version: 1.1.27
+        specifier: workspace:*
+        version: link:../ao-sync-sdk
     devDependencies:
       '@babel/preset-env':
         specifier: ^7.26.0
@@ -2193,9 +2245,6 @@ packages:
 
   '@vela-ventures/ao-sync-sdk@1.1.14':
     resolution: {integrity: sha512-816MF/At+KqfgejJWsmVg/sWOXhkoqH7B4FdPGJ//zJBX2WOrlM9yh4y6XcW4oApkils8pfiTyUYav7peado8Q==}
-
-  '@vela-ventures/ao-sync-sdk@1.1.27':
-    resolution: {integrity: sha512-htFMCbBubE0Oop6SISTbGQM+dZmaX1VQleVMI65mYwIlgroFo0B+hSDMFwgzPeL6Q4gAlgvvY2f8dqnivx1fMg==}
 
   '@vela-ventures/aosync-strategy@1.0.3':
     resolution: {integrity: sha512-TomSNof3n6I3fD1GJM25aHO3C1IliJ9RmO0EURKbc1vFhq2xafjx1zRPMP7fV2qW3b7o/BC12VdEXK00PvyYiA==}
@@ -7201,21 +7250,6 @@ snapshots:
 
   '@vela-ventures/ao-sync-sdk@1.1.14':
     dependencies:
-      arconnect: 1.0.4
-      arweave: 1.15.5
-      buffer: 6.0.3
-      lottie-web: 5.12.2
-      mqtt: 5.10.4
-      qrcode: 1.5.4
-      uuid: 11.1.0
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-
-  '@vela-ventures/ao-sync-sdk@1.1.27':
-    dependencies:
-      '@fontsource/sora': 5.2.5
       arconnect: 1.0.4
       arweave: 1.15.5
       buffer: 6.0.3
