@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@permaweb/aoconnect": "^0.0.85",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.0",
     "@tanstack/react-query": "^5.80.6",
     "@vela-ventures/aosync-sdk-react": "workspace:*",
+    "ethers": "^6.13.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
