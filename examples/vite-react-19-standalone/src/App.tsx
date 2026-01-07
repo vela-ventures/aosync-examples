@@ -123,10 +123,6 @@ function App() {
     // Return plain object format similar to Base transactions
     return {
       serialized: serializedBase64,
-      to: toPubkey.toString(),
-      from: fromPubkey.toString(),
-      amount: lamports.toString(),
-      recentBlockhash: blockhash,
     };
   };
 
@@ -168,11 +164,6 @@ function App() {
     // Return plain object format similar to Base transactions
     return {
       serialized: serializedBase64,
-      to: toTokenAccount.toString(),
-      from: fromPubkey.toString(),
-      amount: "10000", // 0.01 USDC (6 decimals)
-      mint: SOLANA_USDC_MINT.toString(),
-      recentBlockhash: blockhash,
     };
   };
 
